@@ -1,3 +1,11 @@
-.wrapper {
+.lb-wrapper {
   background-color: #FFFEF0;
+  color: $gray-dark;
+  font-family: $base-font;
+  font-size: $base-size;
+  line-height: $base-height;
+  h1, h2, h3 {
+  font-family: $header-font;
+  }
+
 }

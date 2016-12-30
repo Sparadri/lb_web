@@ -108,14 +108,12 @@ Controlled component: has its value set by state.
 * because our application can have many different pieces of state, we can have many reducers
 * reducers produce the value of our state
 
-
 ### Containers
 * react and redux are separate projects
 * we need to use react-redux > containters
 * containers = smart components
 * containers should be the components connected to redux
 * container: the most parent component that cares about a change a state (tbc)
-
 
 ### Action Creators
 1. when user clicks, goes to action creator.
@@ -124,11 +122,21 @@ Controlled component: has its value set by state.
 4. switch in reducer depending on the action type, reducer can choose to return a new piece of state.
 5. updates application state
 
+### Middleware
+* Middlewares are functions that takes an action and depending on the action, can choose to do things before they reach reducers (logs it, stops it). Like a doorman or a gatekeeper. Middleware can modify actions.
+* redux-promise is a famous middleware package on redux
+
+### React Router
+* react router decides, based on the url, which component to render
 
 
-
-
-
+// FLOW IS THE FOLLOWING: CONTAINERS > ACTIONS > REDUCERS > ROOT REDUCER (STATE OF APP)
+// redux is in charge of managing our application state
+// component state different from application state
+// application state is formed by our reducers
+// for each key of our COmbineReducers, we assign 1 reducer
+// each reducer is responsible for changing our application state over time
+// action sends action to reducers
 
 
 

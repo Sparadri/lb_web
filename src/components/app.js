@@ -3,24 +3,22 @@ import React, { Component } from 'react';
 import * as actions from '../actions';
 
 // Components
-import CardProduct from './card_product';
 import FormNl from './form_nl';
+import Navbar from './navbar';
 
 // Containers
-import FiltersList from '../containers/filters_list';
-import Filter from '../containers/filter';
+import CategoryList from '../containers/category_list';
+import Category from '../containers/category';
+import ProductList from '../containers/product_list';
 
 export default class App extends Component {
-  componentWillMount() {
-    // this.props.loadData();
-  }
   render() {
     return (
-      <div>
-        <FiltersList/>
-        <Filter/>
-        <CardProduct/>
+      <div className="adrien">
+        <Navbar/>
+        {this.props.children}
         <FormNl/>
+        <ProductList/>
       </div>
     );
   }

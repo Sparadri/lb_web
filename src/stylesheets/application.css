@@ -1,6 +1,63 @@
-.adrien {
-  font-size: 25px;
-  color: green; }
+@import url("https://fonts.googleapis.com/css?family=Rozha+One|Source+Sans+Pro:400,600,700,900");
+.padding-0 {
+  padding: 0; }
+
+.margin-0 {
+  margin: 0; }
 
 .wrapper {
-  background-color: #FFFEF0; }
+  margin: 0; }
+
+.navbar-wrapper {
+  border-bottom: 0.5px solid #748386;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px; }
+  .navbar-wrapper .menu-item {
+    padding: 0 0 0 20px;
+    font-size: 0.8em;
+    transition: all ease 0.3s; }
+    .navbar-wrapper .menu-item:hover {
+      cursor: pointer;
+      color: black; }
+
+.product-card {
+  height: 450px;
+  width: 310px; }
+  .product-card .product-picture {
+    height: 300px;
+    width: 300px;
+    background-color: #113849;
+    margin: auto; }
+  .product-card .product-content {
+    padding: 5px 10px 10px 10px; }
+    .product-card .product-content .product-title {
+      font-weight: bold;
+      font-size: 14px;
+      color: #353F47; }
+    .product-card .product-content .product-price {
+      color: #93A8AC; }
+    .product-card .product-content .product-description {
+      font-size: 11px;
+      color: #748386;
+      height: 70px; }
+    .product-card .product-content .product-labels {
+      font-size: 11px;
+      display: flex;
+      color: #353F47; }
+      .product-card .product-content .product-labels .product-label {
+        margin: 5px 10px 5px 0px;
+        padding: 1px 0px 0px 0px;
+        line-height: 13px;
+        border-bottom: 1px solid #93A8AC; }
+  .product-card:hover {
+    cursor: pointer; }
+
+.lb-wrapper {
+  background-color: #FFFEF0;
+  color: #353F47;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  line-height: 1.6; }
+  .lb-wrapper h1, .lb-wrapper h2, .lb-wrapper h3 {
+    font-family: "Rozha One", serif; }
