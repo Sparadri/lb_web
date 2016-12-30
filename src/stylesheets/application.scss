@@ -1,0 +1,17 @@
+// http://sass-lang.com/
+// https://medium.com/@brianhan/watch-compile-your-sass-with-npm-9ba2b878415b#.893yr7z7t
+
+// Graphical variables & utilities
+@import "config/variables";
+@import "config/utilities";
+
+// External libraries
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
+
+// Project stylesheet
+@import "components/index";
+@import "pages/index";
+@import "vendor/index";
