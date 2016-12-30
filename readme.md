@@ -27,11 +27,11 @@ const App = (a, b) => {
 ## REACT
 
 ### Random
-- first file opened > index.html:
-- bundle.js is the compile javascript for the entire application (through webpack and babel transpiling of es6 code)
-- folder organisation (to be updated)
+⋅⋅* first file opened > index.html:
+⋅⋅* bundle.js is the compile javascript for the entire application (through webpack and babel transpiling of es6 code)
+⋅⋅* folder organisation (to be updated)
 ```javascript
-// s
+// src
   // components
   // images
   // views
@@ -52,16 +52,16 @@ const App = (a, b) => {
   index.js
   package.json
 ```
-- React    > used to manage components
-- Class Component > we're creating a class, not an instance
-- Every react component must have a render method, to render the jsx
-- ReactDOM > used to interact with the DOM
+⋅⋅* React    > used to manage components
+⋅⋅* Class Component > we're creating a class, not an instance
+⋅⋅* Every react component must have a render method, to render the jsx
+⋅⋅* ReactDOM > used to interact with the DOM
 ```javascript
 ReactDOM.render(<App/>, document.querySelector('.container'))
 ```
 
 ### Export / import
-- You can have one default export per file
+⋅⋅* You can have one default export per file
 export components > makes it available in other files.
 ```javascript
 export default ComponentName;
