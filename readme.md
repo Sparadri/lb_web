@@ -98,8 +98,8 @@ Controlled component: has its value set by state.
 
 ### Intro
 * Aims at separating the data from the view:
-..* data: list of books, currently selected books
-..* views: list view, list item, detail view
+⋅⋅* data: list of books, currently selected books
+⋅⋅* views: list view, list item, detail view
 * Redux contains the state of the application
 * Our application state is a plain javascript object
 
@@ -111,7 +111,7 @@ Controlled component: has its value set by state.
 
 ### Containers
 * react and redux are separate projects
-* we need to use react* redux > containters
+* we need to use react-redux > containters
 * containers = smart components
 * containers should be the components connected to redux
 * container: the most parent component that cares about a change a state (tbc)
