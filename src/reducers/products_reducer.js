@@ -4,10 +4,11 @@ const INITIAL_STATE = {};
 
 // reducers are just functions
 export default function(state = INITIAL_STATE, action) {
-  console.log('action received', action)
+  console.log('action received in product reducer', action)
 
   switch (action.type) {
     case FETCH_PRODUCTS:
+      console.log(action.payload.data);
       return action.payload.data;
     default:
       return state;

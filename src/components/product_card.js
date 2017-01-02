@@ -21,13 +21,13 @@ class ProductCard extends Component {
         </div>
         <div className="product-content">
           <div className="product-title">
-            {this.props.details.title}
+            {this.props.title}
           </div>
           <div className="product-price">
-            {this.props.details.price} $
+            {this.props.price} $
           </div>
           <div className="product-description">
-            {this.props.details.description}
+            {this.props.description}
           </div>
           <div className="product-labels">
             {Object.keys(this.props.categories)

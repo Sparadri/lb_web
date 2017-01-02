@@ -1,17 +1,27 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
 
+// Import React Router Deps
+import { Route, IndexRedirect } from 'react-router';
+
+// Import Compoments
 import App from './components/app'
 import ProductList from './containers/product_list'
-import CategoryList from './containers/category_list'
+
+// Import Containers
+import ProductsPage from './containers/products_page'
+import CollectionPage from './containers/collection_page'
+import CollectionsPage from './containers/collections_page'
 
 // productList is a nested component
 export default (
   <Route path="/" component={App} >
-    <Route path="products" component={ProductList} />
-    <Route path="categories" component={CategoryList} />
+    <IndexRedirect to="/collection/91"/>
+    <Route path="products" component={ProductsPage} />
+    <Route path="collection/:id" component={CollectionPage} />
+    <Route path="collections" component={CollectionsPage} />
   </Route>
 );
 
+// <Route path="categories" component={CategoryList} />
 // root to > initial route
 // <IndexRoute component={Collection}

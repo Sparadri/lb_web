@@ -26,7 +26,7 @@ class FormNl extends Component {
     event.preventDefault();
 
     // we need to make a call to the API
-    this.props.fetchProducts(2);
+    // this.props.fetchProducts(2);
     this.setState({ term: '' });
   }
 

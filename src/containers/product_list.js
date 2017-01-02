@@ -12,8 +12,8 @@ class ProductList extends Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.fetchProducts(2);
+  componentDidMount() {
+    // this.props.fetchProducts();
   }
 
   renderProduct(key) {
@@ -21,29 +21,24 @@ class ProductList extends Component {
     let categories  = this.props.products[key]['categories']
 
     return (
-      <div key={key} className="col-xs-12 col-md-6 col-md-4">
-        <ProductCard details={details} categories={categories}/>
+      <div key={key} className="col-xs-12 col-sm-6 col-md-4">
+        <ProductCard {...details} categories={categories}/>
       </div>
     )
   }
 
   render() {
-    if (!this.props.products) {
+    if (!this.props) {
       return <div>no products</div>;
     }
 
-    // lodash for mapping: https://lodash.com/docs/4.17.3#mapKeys
-    // https://lodash.com/docs/4.17.3#mapValues
     let that = this;
     return (
-      <div className="container">
-        <div className="row">
-          {Object.keys(this.props.products)
-            .map(function (key) {
-              return that.renderProduct(key)
-            })
-          }
-        </div>
+      <div className="row">
+        {Object.keys(this.props.products).map(function (key) {
+            return that.renderProduct(key)
+          })
+        }
       </div>
     )
   }
@@ -60,10 +55,6 @@ function mapStateToProps({ products }) {
     return {products}
   }
   return {
-    categories: products.categories,
-    collectioners: products.collectioners,
-    current_user: products.current_user,
-    nb_products: products.nb_products,
     products: products.products
  };
 }

@@ -8,11 +8,29 @@
 .wrapper {
   margin: 0; }
 
+a {
+  color: inherit;
+  text-decoration: none;
+  color: inherit; }
+  a:hover {
+    text-decoration: none;
+    color: inherit; }
+  a:active {
+    text-decoration: none;
+    color: inherit; }
+  a:visited {
+    text-decoration: none;
+    color: inherit; }
+  a:link {
+    text-decoration: none;
+    color: inherit; }
+
 .navbar-wrapper {
   border-bottom: 0.5px solid #748386;
   display: flex;
   align-items: center;
-  padding: 0 0 0 20px; }
+  padding: 0 0 0 20px;
+  letter-spacing: 0.3px; }
   .navbar-wrapper .menu-item {
     padding: 0 0 0 20px;
     font-size: 0.8em;
@@ -22,11 +40,12 @@
       color: black; }
 
 .product-card {
-  height: 450px;
-  width: 310px; }
+  height: 500px;
+  width: 300px;
+  margin: auto; }
   .product-card .product-picture {
-    height: 300px;
-    width: 300px;
+    height: 280px;
+    width: 280px;
     background-color: #113849;
     margin: auto; }
   .product-card .product-content {
@@ -38,11 +57,11 @@
     .product-card .product-content .product-price {
       color: #93A8AC; }
     .product-card .product-content .product-description {
-      font-size: 11px;
+      font-size: 12px;
       color: #748386;
-      height: 70px; }
+      height: 100px; }
     .product-card .product-content .product-labels {
-      font-size: 11px;
+      font-size: 12px;
       display: flex;
       color: #353F47; }
       .product-card .product-content .product-labels .product-label {
@@ -52,6 +71,45 @@
         border-bottom: 1px solid #93A8AC; }
   .product-card:hover {
     cursor: pointer; }
+
+.category-filters {
+  display: flex;
+  margin: 50px 0px 20px 5px;
+  font-size: 12px;
+  color: #748386;
+  letter-spacing: 0.3px; }
+
+.lb-label {
+  border: 1px solid #748386;
+  padding: 3px 10px;
+  margin: 5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease; }
+  .lb-label:hover {
+    background-color: #748386;
+    color: #FFFEF0;
+    border: 1px solid #748386;
+    cursor: pointer; }
+  .lb-label .number {
+    font-size: 10px; }
+
+.is-selected {
+  background-color: #353F47;
+  color: #FFFEF0;
+  border: 1px solid #353F47; }
+
+.collectioner-filters {
+  position: fixed;
+  right: 15px;
+  top: 130px;
+  display: flex;
+  flex-flow: column;
+  font-size: 12px;
+  color: #748386; }
+  .collectioner-filters .title {
+    margin: auto;
+    font-size: "Source Sans Pro", sans-serif;
+    color: #353F47; }
 
 .lb-wrapper {
   background-color: #FFFEF0;

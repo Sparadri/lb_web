@@ -102,6 +102,8 @@ Controlled component: has its value set by state.
 ⋅⋅* views: list view, list item, detail view
 * Redux contains the state of the application
 * Our application state is a plain javascript object
+* instead of holding our state in a component we hold our state in a redux store
+
 
 ### Reducers
 * a function that returns a piece of the application state
@@ -140,4 +142,22 @@ Controlled component: has its value set by state.
 
 
 
+to do: change query parameters in URL
 
+
+
+
+
+es6 tips
+```javascript
+/**
+ * Called if a parameter is missing and
+ * the default value is evaluated.
+ */
+function mandatory() {
+    throw new Error('Missing parameter');
+}
+function foo(mustBeProvided = mandatory()) {
+    return mustBeProvided;
+}
+```

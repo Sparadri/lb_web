@@ -1,9 +1,10 @@
 .product-card {
-  height: 450px;
-  width: 310px;
+  height: 500px;
+  width: 300px;
+  margin: auto;
   .product-picture {
-    height: 300px;
-    width: 300px;
+    height: 280px;
+    width: 280px;
     background-color: $blue-dark;
     margin: auto;
   }
@@ -20,7 +21,7 @@
     .product-description {
       font-size: $small-size;
       color: $gray;
-      height: 70px;
+      height: 100px;
     }
   .product-labels {
     font-size: $small-size;
