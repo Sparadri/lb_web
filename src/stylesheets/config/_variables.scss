@@ -8,21 +8,35 @@ $base-font: 'Source Sans Pro', sans-serif;
 $header-font: 'Rozha One', serif;
 
 // Font Size and Line Height
-$base-size: 14px;
-$small-size: 12px;
+$large-size:  16px;
+$base-size:   14px;
+$small-size:  12px;
 
+// font height & letter spacing
 $base-height: 1.6;
 
 $large-letter-spacing: 0.3px;
 
-// Colors
+
+// font weights
+$bold-weight:   600;
+$bolder-weight: 800;
+
+
+// colors
 $brand-color: #FFFEF0;
 
-
-
-$blue: #31596A;
+$blue:      #31596A;
 $blue-dark: #113849;
 
 $gray-dark:    #353F47;
 $gray:         #748386;
 $gray-light:   #93A8AC;
+$gray-lighter: #f3f2e5;
+
+$red:          #F64747;
+
+// Bootstrap
+.container {
+  width: 100%;
+}

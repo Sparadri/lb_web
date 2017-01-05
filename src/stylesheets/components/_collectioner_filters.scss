@@ -1,14 +1,9 @@
 .collectioner-filters {
-  position: fixed;
-  right: 15px;
-  top: 130px;
-  display: flex;
-  flex-flow: column;
+  // position: fixed;
+  // right: 15px;
+  // top: 130px;
+  // display: flex;
+  // flex-flow: column;
   font-size: $small-size;
   color: $gray;
-  .title {
-    margin: auto;
-    font-size: $base-font;
-    color: $gray-dark;
-  }
 }

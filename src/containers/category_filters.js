@@ -10,8 +10,8 @@ import { fetchProducts } from '../actions/index';
 import { buildQueryParams, fetchUrlParams } from '../utilities/fetch_url_params';
 
 // Import React Components
-import Label from '../components/label';
-
+import CategoryLabel from '../components/category_label';
+import FilterTitle from '../components/filter_title';
 
 class CategoryFilters extends Component {
 
@@ -19,7 +19,7 @@ class CategoryFilters extends Component {
   constructor(props) {
     super(props);
 
-    this.state = ({ selection: {} });
+    this.state = ({ selection: {}, isAllSelected: true });
   }
 
 
@@ -39,8 +39,8 @@ class CategoryFilters extends Component {
     });
 
     // set state
-    this.setState({ selection: categories})
-
+    this.setState({ selection: categories })
+    this.isAllSelected()
   }
 
 
@@ -51,10 +51,19 @@ class CategoryFilters extends Component {
     selection[key] = !this.state.selection[key];
     this.setState({selection: selection});
 
+    this.isAllSelected()
+
     // fetch products
     this.fetchProducts();
   }
 
+  isAllSelected() {
+    if (Object.values(this.state.selection).includes(true)) {
+      this.setState({ isAllSelected: false })
+    } else {
+      this.setState({ isAllSelected: true })
+    }
+  }
 
   onAllClick() {
 
@@ -65,6 +74,8 @@ class CategoryFilters extends Component {
     })
     // update filter selection layout
     this.setState({ selection })
+
+    this.isAllSelected()
 
     // clean url
     window.history.pushState('products', '', '');
@@ -97,7 +108,7 @@ class CategoryFilters extends Component {
         <div
           key={category.id}
           onClick={this.onLabelClick.bind(this, category['id'])}>
-          <Label
+          <CategoryLabel
             {...category}
             isSelected={this.state.selection[key]}/>
         </div>
@@ -108,16 +119,21 @@ class CategoryFilters extends Component {
   render() {
     const that = this;
     return (
-      <div className="category-filters">
-        <span onClick={this.onAllClick.bind(this)}>
-          <Label
-            nb_products={this.props.nb_products}
-            name='all' />
-        </span>
-        {Object.keys(this.props.categories).map(function (key) {
-            return that.renderList(key)
-          })
-        }
+      <div>
+        <FilterTitle name={"Categories"}/>
+        <div className="category-filters">
+          <span onClick={this.onAllClick.bind(this)}>
+            <CategoryLabel
+              nb_products={this.props.nb_products}
+              name='all'
+              isSelected={this.state.isAllSelected}
+              isAll={true} />
+          </span>
+          {Object.keys(this.props.categories).map(function (key) {
+              return that.renderList(key);
+            })
+          }
+        </div>
       </div>
     )
   }

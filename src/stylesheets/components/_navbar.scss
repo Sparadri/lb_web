@@ -1,16 +1,29 @@
 .navbar-wrapper {
-  border-bottom: 0.5px solid $gray;
+  border-bottom: 0.5px solid $gray-lighter;
   display: flex;
-  align-items: center;
-  padding: 0 0 0 20px;
+  justify-content: space-between;
+  font-size: 1em;
+  padding: 10px 0px 10px 20px;
   letter-spacing: $large-letter-spacing;
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  .right {
+    display: flex;
+    align-items: center;
+  }
   .menu-item {
     padding: 0 0 0 20px;
     font-size: 0.8em;
     transition: all ease 0.3s;
+    color: $gray;
     &:hover {
       cursor: pointer;
       color: black;
     }
   }
+}
+.navbar-fixed {
+  position: fixed;
 }

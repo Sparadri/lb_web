@@ -1,0 +1,36 @@
+.category-label {
+  border: 1px solid $gray;
+  padding: 3px 10px;
+  margin: 5px;
+  text-transform: capitalize;
+  transition: all 0.2s ease;
+  &:hover {
+    background-color: $gray;
+    color: $brand-color;
+    border: 1px solid $gray;
+    cursor: pointer;
+  }
+  .number {
+    font-size: 10px;
+  }
+  &.is-selected {
+    background-color: $gray-dark;
+    color: $brand-color;
+    border: 1px solid $gray-dark;
+  }
+  &.is-all {
+    color: $red;
+    border: 1px solid $red;
+    &.is-selected {
+      background-color: $red;
+      color: $brand-color;
+      border: 1px solid $red;
+    }
+    &:hover {
+      background-color: $red;
+      color: $brand-color;
+      border: 1px solid $red;
+    }
+  }
+
+}

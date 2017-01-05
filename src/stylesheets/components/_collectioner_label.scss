@@ -1,0 +1,39 @@
+.collectioner-label {
+  margin-bottom: 15px;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  letter-spacing: $large-letter-spacing;
+  .collectioner-content {
+    margin-left: 10px;
+  }
+  .collection-title {
+    color: $gray-light;
+    font-style: italic;
+    transition: all 0.2s ease;
+  }
+  .is-selected {
+    color: $gray-dark;
+    .collection-title {
+      color: $gray;
+    }
+    &:hover {
+      color: black;
+    }
+  }
+  &:hover {
+    color: $gray-dark;
+    cursor: pointer;
+    .collection-title {
+      color: $gray;
+    }
+  }
+}
+
+
+
+// products page
+.filters-fixed {
+  position: fixed;
+}

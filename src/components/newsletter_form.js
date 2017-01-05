@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import { fetchProducts } from '../actions/index';
 
-class FormNl extends Component {
+class NewsletterForm extends Component {
 
   constructor(props) {
     super(props);
@@ -30,16 +30,26 @@ class FormNl extends Component {
     this.setState({ term: '' });
   }
 
+  // <input
+  //   placeholder="Receive weekly collections"
+  //   className="input-form"
+  //   value={this.state.term}
+  //   onChange={this.onInputChange}/>
+
+
+
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input">
-        <input
-          placeholder="Search something"
-          className="form-control"
-          value={this.state.term}
-          onChange={this.onInputChange}/>
-        <span className="input-group=btn">
-          <button type="submit" className="btn btn-secondary">Submit</button>
+      <form onSubmit={this.onFormSubmit} className="lb-form">
+        <div className="group">
+          <input type="text" required/>
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label>Name</label>
+        </div>
+
+        <span className="">
+          <div type="submit" className="btn-form">Subscribe</div>
         </span>
       </form>
     );
@@ -54,7 +64,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 // null > we just say we don't care about the current state (?)
-export default connect(null, mapDispatchToProps)(FormNl)
+export default connect(null, mapDispatchToProps)(NewsletterForm)
 
 
 // NEED TO BIND THE CONTEXT WHEN CALLBACK

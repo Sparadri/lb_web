@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import CategoryLabel from './category_label'
+import ProductLabel from './product_label'
 
 
 class ProductCard extends Component {
 
-  renderCategoryLabel(key) {
+  renderProductLabel(key) {
     return (
       <div key={key}>
-        <CategoryLabel categories={this.props.categories[key]}/>
+        <ProductLabel categories={this.props.categories[key]}/>
       </div>
     )
   }
@@ -32,7 +32,7 @@ class ProductCard extends Component {
           <div className="product-labels">
             {Object.keys(this.props.categories)
               .map(function (key) {
-                return that.renderCategoryLabel(key)
+                return that.renderProductLabel(key)
               })
             }
           </div>
