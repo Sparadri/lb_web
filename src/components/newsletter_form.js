@@ -4,13 +4,25 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { fetchProducts } from '../actions/index';
+import {Editor, EditorState} from 'draft-js';
+
+// Utility libraries
+import classNames from 'classnames/bind';
+
+
 
 class NewsletterForm extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = { term: '' };
+    this.state = {
+      term: '',
+      is_clicked: false,
+      editorState: EditorState.createEmpty()
+    };
+
+    this.onChange = (editorState) => this.setState({editorState});
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -39,22 +51,25 @@ class NewsletterForm extends Component {
 
 
   render() {
+    let input = classNames({
+      'editor': true,
+      'focused': this.state.is_clicked
+    });
+
     return (
       <form onSubmit={this.onFormSubmit} className="lb-form">
-        <div className="group">
-          <input type="text" required/>
-          <span className="highlight"></span>
-          <span className="bar"></span>
-          <label>Name</label>
+        <div className={input} onClick={() => this.setState({ is_clicked: true })} >
+          <Editor
+            placeholder="receive new collections every week"
+            editorState={this.state.editorState}
+            onChange={this.onChange} />
         </div>
-
         <span className="">
           <div type="submit" className="btn-form">Subscribe</div>
         </span>
       </form>
     );
   }
-
 }
 
 // fetchProducts causes the action creator and returns the action

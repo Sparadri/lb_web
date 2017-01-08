@@ -40,3 +40,17 @@
   letter-spacing: $large-letter-spacing;
   padding: 5px 10px;
 }
+
+.editor {
+  flex-grow: 1;
+  background: white;
+  opacity: 0.8;
+  border-bottom: 1px solid $gray-light;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.focused {
+  border-top: 1px solid #f5f4e8;
+  border-left: 1px solid #f5f4e8;
+  opacity: 1;
+}

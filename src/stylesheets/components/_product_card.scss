@@ -10,6 +10,42 @@
   }
   .product-content {
     padding: 5px 10px 10px 10px;
+    .content-header {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      .header-title {
+        flex-grow: 1;
+      }
+
+      // heart fa fa-font
+      i {
+        font-size: 18px;
+        margin: 5px;
+        padding-left: 5px;
+        transition: all 0.2s ease;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      .fa-heart-o {
+        color: $gray-light;
+        transition: all 0.2s ease;
+        &:hover {
+          color: $red;
+        }
+      }
+      .fa-heart {
+        color: $red;
+        transition: all 0.2s ease;
+        &:hover {
+          color: $gray-light;
+        }
+      }
+
+
+
+    }
     .product-title {
       font-weight: bold;
       font-size: $base-size;
