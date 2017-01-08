@@ -6,6 +6,8 @@ import { Link } from 'react-router';
 // Import Actions
 import { fetchCollections } from '../actions/index';
 
+// redux-auth
+// import { EmailSignUpForm } from "redux-auth/material-ui-theme";
 
 class CollectionsPage extends Component {
 
@@ -21,6 +23,7 @@ class CollectionsPage extends Component {
     }
 
     var that = this;
+    // <EmailSignUpForm />;
     return (
       <div>
         {Object.keys(this.props.collections).map(function (key) {

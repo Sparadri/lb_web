@@ -43,6 +43,7 @@
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
+    "redux-auth": "0.0.5-beta5",
     "redux-promise": "^0.5.3"
   }
 }
