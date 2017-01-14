@@ -262,6 +262,30 @@ button {
   border-left: 1px solid #f5f4e8;
   opacity: 1; }
 
+.circular-progress {
+  height: 100vh;
+  display: flex;
+  justify-content: center; }
+
+.auth {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: center; }
+  .auth .form {
+    display: flex;
+    flex-flow: column;
+    height: 20vh;
+    justify-content: space-around; }
+    .auth .form .btn {
+      background-color: #31596A;
+      border-radius: 0px;
+      color: #FFFEF0;
+      padding: 10px;
+      letter-spacing: 0.3px; }
+      .auth .form .btn:hover {
+        background-color: #113849; }
+
 .lb-wrapper {
   background-color: #FFFEF0;
   color: #353F47;

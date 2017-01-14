@@ -1,0 +1,22 @@
+.auth {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    .form {
+      display: flex;
+      flex-flow: column;
+      height: 20vh;
+      justify-content: space-around;
+      .btn {
+        background-color: $blue;
+        border-radius: 0px;
+        color: $brand-color;
+        padding: 10px;
+        letter-spacing: $lg-letter-spacing;
+        &:hover {
+          background-color: $blue-dark;
+        }
+      }
+    }
+}

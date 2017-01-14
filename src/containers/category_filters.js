@@ -51,7 +51,7 @@ class CategoryFilters extends Component {
     selection[key] = !this.state.selection[key];
     this.setState({selection: selection});
 
-    this.isAllSelected()
+    this.isAllSelected();
 
     // fetch products
     this.fetchProducts();

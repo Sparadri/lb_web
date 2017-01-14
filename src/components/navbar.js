@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link }             from 'react-router';
+import { connect } from 'react-redux';
 
 // for hiding navbar, to be updated
 let initial_scroll = 0;
@@ -26,6 +27,24 @@ class Navbar extends Component {
     initial_scroll = last_scroll
   }
 
+  renderAuth() {
+    if (this.props.auth) {
+      if (this.props.auth.authenticated) {
+        return (
+          <div className="right menu-item margin-right-20">
+            My Account
+          </div>
+        )
+      } else {
+        return (
+          <div className="right menu-item margin-right-20">
+            <Link to={`/login`}>Login</Link><Link to={`/signup`}> / Signup</Link>
+          </div>
+        )
+      }
+    }
+  }
+
 
   render() {
     return (
@@ -44,12 +63,14 @@ class Navbar extends Component {
             <Link to={`/products`}>ALL ITEMS</Link>
           </div>
         </div>
-        <div className="right menu-item margin-right-20">
-          SIGN IN
-        </div>
+        {this.renderAuth()}
       </div>
     );
   }
 }
 
-export default Navbar;
+function mapStateToProps({ auth }) {
+  return { auth: auth };
+}
+
+export default connect(mapStateToProps)(Navbar);

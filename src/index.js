@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import ReduxPromiseMiddleware from 'redux-promise'; // middleware for redux
 import { Router, browserHistory } from 'react-router';
+
+// middlewares
+import ReduxPromiseMiddleware from 'redux-promise'; // middleware for redux
+import ReduxThunk from 'redux-thunk'
 
 import reducers from './reducers';
 import routes from './routes';
@@ -18,7 +21,7 @@ import rootReducer from './reducers/index';
 const enhancers = compose(
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
-const store = applyMiddleware(ReduxPromiseMiddleware)(createStore)(reducers, enhancers)
+const store = applyMiddleware(ReduxPromiseMiddleware, ReduxThunk)(createStore)(reducers, enhancers)
 
 // const store = createStore(reducers, applyMiddleware(ReduxPromiseMiddleware), enhancers);
 

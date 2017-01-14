@@ -13,7 +13,7 @@ import CollectionerFilters from './collectioner_filters';
 // Import Components
 import FilterTitle from '../components/filter_title';
 import NewsletterForm from '../components/newsletter_form';
-
+import ProgressBar from '../components/progress_bar';
 
 
 class ProductsPage extends Component {
@@ -45,10 +45,10 @@ class ProductsPage extends Component {
 
   render() {
     if (!this.props.products) {
-      return <div>no products</div>;
+      return <ProgressBar/>
     }
 
-        // <CollectionerFilters/>
+    // <CollectionerFilters/>
     return (
       <div className="container">
         <div className="row">

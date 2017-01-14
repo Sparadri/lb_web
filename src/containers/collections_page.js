@@ -6,6 +6,9 @@ import { Link } from 'react-router';
 // Import Actions
 import { fetchCollections } from '../actions/index';
 
+// Import Utilities
+import ProgressBar from '../components/progress_bar';
+
 // redux-auth
 // import { EmailSignUpForm } from "redux-auth/material-ui-theme";
 
@@ -16,14 +19,14 @@ class CollectionsPage extends Component {
     this.props.fetchCollections();
   }
 
-
   render() {
     if (!this.props.collections) {
-      return <div>no collections</div>;
+      return <ProgressBar/>;
     }
 
     var that = this;
     // <EmailSignUpForm />;
+
     return (
       <div>
         {Object.keys(this.props.collections).map(function (key) {

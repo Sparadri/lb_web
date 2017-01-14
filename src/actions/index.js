@@ -1,4 +1,7 @@
+// Utilities
 import axios from 'axios';
+import { getLocalStorage, setLocalStorage } from '../utilities/local_storage'
+
 
 const API_KEY = 'lebardaweb';
 const API_URL = 'http://localhost:3000/api/v1';
@@ -11,16 +14,18 @@ export function selectCategory(category) {
   };
 }
 
-export const FETCH_PRODUCTS   = 'FETCH_PRODUCTS';
-export const FETCH_COLLECTION = 'FETCH_COLLECTION';
+export const FETCH_PRODUCTS    = 'FETCH_PRODUCTS';
+export const FETCH_COLLECTION  = 'FETCH_COLLECTION';
 export const FETCH_COLLECTIONS = 'FETCH_COLLECTIONS';
+
 
 export function fetchProducts(query = '') {
 
   // retrieve current and call API
   const current_url = window.location.search;
   const url         = `${API_URL}/products${current_url}`;
-  const request     = axios.get(url)
+  const headers     = getLocalStorage()
+  const request     = axios.get(url, {headers: headers})
 
   console.log('products request ', request);
 
@@ -30,11 +35,12 @@ export function fetchProducts(query = '') {
   };
 }
 
+
 export function fetchCollection(collection_id) {
 
   // retrieve current and call API
   const url         = `${API_URL}/collections/${collection_id}`;
-  const request     = axios.get(url)
+  const request     = axios.get(url, {headers: getLocalStorage()})
 
   console.log('collection request ', request);
 
@@ -44,11 +50,12 @@ export function fetchCollection(collection_id) {
   };
 }
 
+
 export function fetchCollections() {
 
   // retrieve current and call API
   const url         = `${API_URL}/collections`;
-  const request     = axios.get(url)
+  const request     = axios.get(url, {headers: getLocalStorage()})
 
   console.log('collections request ', request);
 
@@ -57,6 +64,7 @@ export function fetchCollections() {
     payload: request
   };
 }
+
 
 // Action Creators:
 //   - everytime someone interacts with the website, it dispatches an action

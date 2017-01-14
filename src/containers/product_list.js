@@ -6,6 +6,8 @@ import { fetchProducts } from '../actions/index';
 import ProductCard from '../components/product_card';
 
 
+
+
 class ProductList extends Component {
 
   constructor(props) {
@@ -29,7 +31,7 @@ class ProductList extends Component {
 
   render() {
     if (!this.props) {
-      return <div>no products</div>;
+      return '';
     }
 
     let that = this;
