@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Utilities
-import { setLocalStorage } from '../utilities/local_storage'
+import { setLocalStorage, getLocalStorage } from '../utilities/local_storage'
 
 // to make changes of the URL
 import { browserHistory } from 'react-router';
@@ -15,7 +15,20 @@ export const AUTH_USER   = 'AUTH_USER';
 export const UNAUTH_USER = 'UNAUTH_USER';
 export const AUTH_ERROR  = 'AUTH_ERROR';
 
+export function validateToken() {
 
+  return function(dispatch) {
+
+      axios.get(`${API_URL}validate_token`, {headers: getLocalStorage() })
+        .then( response => {
+          dispatch({ type: AUTH_USER });
+        })
+        .catch( error => {
+          console.log('-------------------------------------------');
+        })
+  }
+
+}
 
 export function signupUser({ email, password }) {
 

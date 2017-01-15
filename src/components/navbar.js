@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link }             from 'react-router';
 import { connect } from 'react-redux';
 
+// actions > CAREFUL > SHOULD IN APP.JS
+import { validateToken } from '../actions/auth';
+
 // for hiding navbar, to be updated
 let initial_scroll = 0;
 
@@ -10,6 +13,7 @@ class Navbar extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    this.props.validateToken();
   }
 
 
@@ -73,4 +77,4 @@ function mapStateToProps({ auth }) {
   return { auth: auth };
 }
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(mapStateToProps, { validateToken })(Navbar);

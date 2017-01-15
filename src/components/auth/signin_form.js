@@ -19,10 +19,11 @@ class SigninForm extends Component {
     const { handleSubmit, fields: { email, password} } = this.props;
     return (
       <div className="auth">
+        <h1 className="title"> Welcome back</h1>
         <form className="form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-          <Field name="email" component="input" type="email"/>
-          <Field name="password" component="input" type="text"/>
-          <button type="submit" className="btn">LOGIN</button>
+          <Field name="email" component="input" type="email" placeholder="Please provide your email"/>
+          <Field className="margin-top-30" name="password" component="input" type="text" placeholder="And your password"/>
+          <button type="submit" className="btn margin-top-30">LOGIN</button>
         </form>
       </div>
     );

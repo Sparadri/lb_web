@@ -269,22 +269,29 @@ button {
 
 .auth {
   display: flex;
+  flex-flow: column;
   height: 80vh;
   justify-content: center;
   align-items: center; }
+  .auth .title {
+    padding: 30px; }
   .auth .form {
     display: flex;
     flex-flow: column;
-    height: 20vh;
     justify-content: space-around; }
     .auth .form .btn {
       background-color: #31596A;
       border-radius: 0px;
       color: #FFFEF0;
       padding: 10px;
-      letter-spacing: 0.3px; }
+      letter-spacing: 1px;
+      transition: all 0.2s ease; }
       .auth .form .btn:hover {
         background-color: #113849; }
+    .auth .form input {
+      width: 400px;
+      background-color: #fffef0;
+      border-bottom: 1px solid #f3f2e5; }
 
 .lb-wrapper {
   background-color: #FFFEF0;

@@ -24,7 +24,7 @@ export function fetchProducts(query = '') {
   // retrieve current and call API
   const current_url = window.location.search;
   const url         = `${API_URL}/products${current_url}`;
-  const headers     = getLocalStorage()
+  const headers     = getLocalStorage();
   const request     = axios.get(url, {headers: headers})
 
   console.log('products request ', request);
@@ -40,7 +40,7 @@ export function fetchCollection(collection_id) {
 
   // retrieve current and call API
   const url         = `${API_URL}/collections/${collection_id}`;
-  const request     = axios.get(url, {headers: getLocalStorage()})
+  const request     = axios.get(url, {headers: getLocalStorage()});
 
   console.log('collection request ', request);
 

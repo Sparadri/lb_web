@@ -1,12 +1,16 @@
 .auth {
     display: flex;
+    flex-flow: column;
     height: 80vh;
     justify-content: center;
     align-items: center;
+    .title {
+      padding: 30px;
+    }
     .form {
       display: flex;
       flex-flow: column;
-      height: 20vh;
+      // height: 20vh;
       justify-content: space-around;
       .btn {
         background-color: $blue;
@@ -14,9 +18,15 @@
         color: $brand-color;
         padding: 10px;
         letter-spacing: $lg-letter-spacing;
+        transition: all 0.2s ease;
         &:hover {
           background-color: $blue-dark;
         }
       }
+    input {
+      width: 400px;
+      background-color: #fffef0;
+      border-bottom: 1px solid $gray-lighter;
+    }
     }
 }

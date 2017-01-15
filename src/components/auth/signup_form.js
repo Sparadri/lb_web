@@ -18,17 +18,14 @@ class SignupForm extends Component {
   render() {
     const { handleSubmit, fields: { email, password} } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <Field name="email" component="input" type="email"/>
-        </div>
-        <div>
-          <label htmlFor="password">Last Name</label>
-          <Field name="password" component="input" type="text"/>
-        </div>
-        <button type="submit">SIGN UP</button>
-      </form>
+      <div className="auth">
+        <h1 className="title"> Welcome @leBarda</h1>
+        <form className="form" onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <Field name="email" component="input" type="email" placeholder="Please provide your email"/>
+          <Field className="margin-top-30" name="password" component="input" type="text" placeholder="Choose a password"/>
+          <button type="submit" className="btn margin-top-30">SIGN UP</button>
+        </form>
+      </div>
     );
   }
 };
